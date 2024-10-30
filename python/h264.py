@@ -1,6 +1,7 @@
 import subprocess
 
-def compress_video_lossless(input_video, output_video):
+
+def compress_video_lossless_h264(input_video, output_video):
     command = [
         'ffmpeg',
         '-i', input_video,
@@ -11,6 +12,8 @@ def compress_video_lossless(input_video, output_video):
         output_video
     ]
     subprocess.run(command, check=True)
+    
+    print("Compressing Succeed!")
 
-# 사용 예시
-compress_video_lossless('/home/jaejun/camera/rawcompr/raw/test2_raw.avi', '/home/jaejun/camera/rawcompr/results/test2_raw_compressed.mkv')
+
+# compress_video_lossless('/home/jaejun/Videos/raw/test2_raw.avi', '/home/jaejun/Videos/results/test2_raw_compressed.avi')
