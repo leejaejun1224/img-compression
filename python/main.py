@@ -18,7 +18,7 @@ def main(args):
     ### Compressing
     print("Compressing start. codec : ", args.codec)
     if args.codec == "h264":
-        compress_video_lossless_h264(input_video, output_video)
+        compress_video_lossless_h264_dummy(input_video, output_video)
     elif args.codec == "huffyuv":
         compress_video_lossless_huffyuv(input_video, output_video)
     
