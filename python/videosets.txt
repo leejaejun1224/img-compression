@@ -1,0 +1,2 @@
+/home/jaejun/Videos/raw/test2_raw.avi /home/jaejun/Videos/results/test2_raw_compressed.mkv
+/home/jaejun/Videos/raw/sample_1920x1080.mkv /home/jaejun/Videos/results/sample_1920x1080.mkv

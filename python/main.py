@@ -1,5 +1,5 @@
 import argparse
-from h264 import *
+from compression import *
 from visualize import *
 from verifying import *
 from dataloader import *
@@ -8,31 +8,32 @@ from dataloader import *
 
 
 def main(args):
-    input_video = '/home/jaejun/Videos/raw/test2_raw.avi'
-    output_video = '/home/jaejun/Videos/results/test2_raw_compressed.avi'
+
+    ### Dataloader
+    video_dicts = dataloader(args.video_sets)
+    input_video = video_dicts["input_video"]
+    output_video = video_dicts["output_video"]
     
-    # dataloader 추가하기.
-    input_video, output_video = dataloader(args.video_sets)
     
-    # compressing start
+    ### Compressing
     print("Compressing start. codec : ", args.codec)
     if args.codec == "h264":
         compress_video_lossless_h264(input_video, output_video)
+    elif args.codec == "huffyuv":
+        compress_video_lossless_huffyuv(input_video, output_video)
     
-    
-    # comparing
+    ### Lossless check
     print("Making sure it's lossless")
-    check_lossless(input_video, output_video)
+    check_lossless_by_frames(input_video, output_video)
     
     
-    # visualizing --option
-    ## press q for stop streaming
+    ### Visualizing --option
+    # press q for stop streaming
     if args.visualize:
         print("Visualizing")
         play_video(output_video)
     
     
-
 
 
 if __name__=="__main__":
