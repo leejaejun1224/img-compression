@@ -22,7 +22,7 @@ def save_uncompressed_mkv(input_mkv, output_mkv):
     except FileNotFoundError:
         print("FFmpeg not found. Please install FFmpeg and try again.")
 # 사용 예제
-input_mkv = "/home/jaejun/Videos/raw/sample_1920x1080.mkv"      # 원본 MKV 파일 경로
-output_mkv = "/home/jaejun/Videos/raw/sample_1920x1080_raw.mkv"    # 무압축으로 저장할 MKV 파일 경로
+input_mkv = "/home/jaejun/Videos/raw/test1.mkv"      # 원본 MKV 파일 경로
+output_mkv = "/home/jaejun/Videos/raw/test1_raw.mkv"    # 무압축으로 저장할 MKV 파일 경로
 
 save_uncompressed_mkv(input_mkv, output_mkv)
